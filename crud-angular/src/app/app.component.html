@@ -1,0 +1,78 @@
+<div class="container">
+  <form #myForm="ngForm">
+    <div class="form-group">
+      <label for="exampleInputEmail1">ID</label>
+      <input type="email" class="form-control" name="id" aria-describedby="emailHelp" [(ngModel)]="userObj.id">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">ORDER</label>
+      <input type="email" class="form-control" name="order" aria-describedby="emailHelp" [(ngModel)]="userObj.Order">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">MODEL</label>
+      <input type="email" class="form-control" name="model" aria-describedby="emailHelp" [(ngModel)]="userObj.Model">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">DATE</label>
+      <input type="email" class="form-control" name="date" aria-describedby="emailHelp" [(ngModel)]="userObj.Date">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">COUNTRY</label>
+      <input type="email" class="form-control" name="country" aria-describedby="emailHelp" [(ngModel)]="userObj.Country">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">STATUS</label>
+      <input type="email" class="form-control" name="status" aria-describedby="emailHelp" [(ngModel)]="userObj.Status">
+    </div>
+
+    <button type="button" class="btn btn-primary" (click)="addUser(myForm.value)" *ngIf="!isEdit">Submit</button>
+    <button type="button" class="btn btn-info" *ngIf="isEdit" (click)="updateUser()">Update</button>
+  </form>
+  <br>
+  <div class="input-group">
+    <div class="form-outline">
+      <input type="search" id="form1" class="form-control" />
+      <label class="form-label" for="form1">Search</label>
+    </div>
+    <button style="padding: 24px 48px;" type="button" class="btn btn-primary">
+      Search
+    </button>
+    <div class="col-md">
+      <div class="form-floating">
+        <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
+          <option selected>Sort by ID</option>
+          <option value="1">Sort by Order</option>
+          <option value="2">Sort by Model</option>
+          <option value="3">Sort By Date</option>
+          <option value="4">Sort By Country</option>
+        </select>
+        <br>
+        <label for="floatingSelectGrid">Choose the sorting style</label>
+      </div>
+    </div>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Order</th>
+        <th scope="col">Model</th>
+        <th scope="col">Date</th>
+        <th scope="col">Country</th>
+        <th scope="col">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+   <tr *ngFor="let user of allUser">
+     <td>{{user.id}}</td>
+     <td>{{user.Order}}</td>
+     <td>{{user.Model}}</td>
+     <td>{{user.Date}}</td>
+     <td>{{user.Country}}</td>
+     <td>{{user.Status}}</td>
+     <td><button (click)="editUser(user)" class="btn btn-warning">Edit</button></td>
+     <td><button (click)="deleteUser(user)" class="btn btn-danger">Delete</button></td>
+   </tr>
+    </tbody>
+  </table>
+</div>

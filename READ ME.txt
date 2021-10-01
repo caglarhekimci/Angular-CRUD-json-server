@@ -1,0 +1,26 @@
+ÇALIŞTIRILMADAN ÖNCE KONTROL EDİLMESİ GEREKEN KODLAR : 
+npm install bootstrap (Uygulamamda pek çok boostrap kullandım)
+npm install -g @angular/cli 
+npm install -g json-server (Verileri düzeltme gibi işlemler için şart)
+json-server --watch db.json (yalnız bunun yazılacağı terminal server dosyasında açılmalı)(yani server dosyasına 
+sağ tıklayıp terminal ile aç denildikten sonra bu kodun yazılması gerek, DİĞER DB.JSON İLE KARIŞTIRILMAMALI)
+ng serve --open
+
+Datamızı objeye çevirdik, bu sayede json-server'a verilerimizi yükleyip silme gibi işlemler yapabilelim.
+
+Angular hakkında çalışmalarım : 
+Angular, react, vue js uygulamaları SPA (single page application) uygulamalardır.
+Tek sayfadan oluşurlar. 
+Sayfa değil de Component mantığı sayesinde geçişler yapabiliriz.
+
+Genel olarak nesne güdümlü bir yapıya sahiptir.
+@component yapısı; class a çalışma anında anlam yükler.
+
+
+Çağlar HEKİMCİ 0507 161 29 30 caglarhekimci@gmail.com
+
+
+
+DİPNOT: VERİLERİMİZ SERVER DOSYASI İÇİNDE DB.JSON İÇİNDE TUTULMAKTADIR!!
+Düzeltme işlemi sorunsuz çalışıyor. Bir de ekleme işlemi fakat ekrana yazmıyor. Ekleme işleminden sonra DB.JSON'a
+bakarsanız ekleme yaptığını göreceksiniz. İyi çalışmalar...
